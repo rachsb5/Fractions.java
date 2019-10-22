@@ -43,7 +43,13 @@ public class Fraction {
 
    }
 
-    // TODO multiply()
+    public Fraction multiply(Fraction other) {
+        int n = this.numerator*other.numerator;
+        int d = this.denominator*other.getDenom();
+
+        Fraction f = new Fraction(n,d);
+        return f;
+    }
 
     public String toString() {
         String s = numerator + "/" + denominator;
@@ -59,17 +65,24 @@ public class Fraction {
         Fraction f3 = f1.add(f2);			// add 2 fractions
         System.out.println("3/4 + 4/5 = " + f3);	// print the answer
 
-		/*
+
 		Fraction f4 = f1.subtract(f2);
 		System.out.println(f1 + " - " + f2 + " = " + f4);
 
-		Add code to call multiply f1 and f2 here
+		Fraction f5 = f1.multiply(f2);
+		System.out.println(f1 + " * " + f2 + " = " + f5);
 
-		create 2 new fractions and add them here.
+		Fraction f6 = new Fraction(6,7);
+		Fraction f7 = new Fraction(1,4);
 
-		*/
-
+		Fraction f8 = f6.add(f7);
+		System.out.println(f6 + " + " + f7 + " = " + f8);
 
     }
 
 }
+
+/* 3/4 + 4/5 = 31/20
+3/4 - 4/5 = -1/20
+3/4 * 4/5 = 12/20
+6/7 + 1/4 = 31/28 */
